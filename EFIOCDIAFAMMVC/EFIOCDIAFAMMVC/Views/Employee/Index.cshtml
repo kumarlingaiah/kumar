@@ -1,0 +1,27 @@
+﻿@model List<EFIOCDIAFAMMVC.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>Name
+        </th>
+    </tr>
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>
+                @emp.FirstName
+            </td>
+        </tr>
+    }
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+</table>

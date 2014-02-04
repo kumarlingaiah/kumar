@@ -1,0 +1,68 @@
+﻿@model EFIOCDIAFAMMVC.Models.EmployeeModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Employee Add</h2>
+
+@using (Html.BeginForm())
+{ 
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee Model</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DOB)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DOB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Salary)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Salary)
+        </div>
+    </fieldset>
+    
+    
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+}
+
+<div>
+
+    @Html.ActionLink("back to list", "Index");
+</div>

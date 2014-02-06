@@ -12,6 +12,8 @@ using Autofac.Integration.Mvc;
 using EFIOCDIAFAMMVC.Data.Infrastructure;
 using EFIOCDIAFAMMVC.Model;
 using LawHelpInteractive.Mappings;
+using EFIOCDIAFAMMVC.Data.UnitOfWork;
+using EFIOCDIAFAMMVC.Service.Employees;
 
 namespace EFIOCDIAFAMMVC
 {
@@ -34,6 +36,9 @@ namespace EFIOCDIAFAMMVC
             var builder = new ContainerBuilder();
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
+            builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork));
+            builder.RegisterType(typeof(EmployeeeService)).As(typeof(IEmployeeeService));
+            //builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
             //builder.RegisterType(typeof(Repository<Employee>)).As(typeof(IRepository<Employee>)).InstancePerHttpRequest();
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

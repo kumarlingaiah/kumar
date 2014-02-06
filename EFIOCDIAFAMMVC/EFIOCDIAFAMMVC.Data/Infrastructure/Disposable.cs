@@ -28,6 +28,7 @@ namespace LawHelpInteractive.Data.Infrastructure
 
         protected virtual void DisposeCore()
         {
+
         }
     }
 }

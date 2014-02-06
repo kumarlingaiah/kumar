@@ -340,6 +340,10 @@
       <Project>{98ef4092-ff21-4dc0-b89f-19a410ed1813}</Project>
       <Name>EFIOCDIAFAMMVC.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EFIOCDIAFAMMVC.Service\EFIOCDIAFAMMVC.Service.csproj">
+      <Project>{42a5ba47-7de7-4852-b687-1adeebb477f4}</Project>
+      <Name>EFIOCDIAFAMMVC.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

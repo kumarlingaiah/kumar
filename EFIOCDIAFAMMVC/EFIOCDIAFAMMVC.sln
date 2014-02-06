@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFIOCDIAFAMMVC.Model", "EFI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFIOCDIAFAMMVC.Data", "EFIOCDIAFAMMVC.Data\EFIOCDIAFAMMVC.Data.csproj", "{DDCE2ED9-11DA-4EA7-A577-6111982FD184}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFIOCDIAFAMMVC.Service", "EFIOCDIAFAMMVC.Service\EFIOCDIAFAMMVC.Service.csproj", "{42A5BA47-7DE7-4852-B687-1ADEEBB477F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{DDCE2ED9-11DA-4EA7-A577-6111982FD184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDCE2ED9-11DA-4EA7-A577-6111982FD184}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDCE2ED9-11DA-4EA7-A577-6111982FD184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A5BA47-7DE7-4852-B687-1ADEEBB477F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A5BA47-7DE7-4852-B687-1ADEEBB477F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A5BA47-7DE7-4852-B687-1ADEEBB477F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A5BA47-7DE7-4852-B687-1ADEEBB477F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

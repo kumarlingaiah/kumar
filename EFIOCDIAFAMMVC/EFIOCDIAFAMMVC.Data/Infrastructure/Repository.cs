@@ -15,6 +15,11 @@ namespace EFIOCDIAFAMMVC.Data.Infrastructure
         private DbContext _DbContext = new EFIOCDIAFAMMVCDbcontext();
         private DbSet<TEntity> DbSet { get { return _DbContext.Set<TEntity>(); } }
 
+        public Repository(DbContext DbContext)
+        {
+            _DbContext = DbContext;
+        }
+
         public List<TEntity> GetAll()
         {
             return DbSet.ToList();

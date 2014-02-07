@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,17 @@ using EFIOCDIAFAMMVC.Model;
 
 namespace EFIOCDIAFAMMVC.Data.UnitOfWork
 {
-    public class UnitOfWork : IDisposable,IUnitOfWork
+    public class UnitOfWork<datacontext> : IDisposable, IUnitOfWork<datacontext> where datacontext : DbContext,new()
     {
-        private EFIOCDIAFAMMVCDbcontext EFIOCDIAFAMMVCDbcontext = new EFIOCDIAFAMMVCDbcontext();
+        //private EFIOCDIAFAMMVCDbcontext EFIOCDIAFAMMVCDbcontext = new EFIOCDIAFAMMVCDbcontext();
         private IRepository<Employee> employeerepository;
+
+        private DbContext _datacontext;
+
+        public UnitOfWork()
+        {
+            _datacontext = new datacontext();
+        }
 
         public IRepository<Employee> Employeerepository
         {
@@ -20,7 +28,7 @@ namespace EFIOCDIAFAMMVC.Data.UnitOfWork
             {
                 if (employeerepository == null)
                 {
-                    this.employeerepository = new Repository<Employee>(EFIOCDIAFAMMVCDbcontext);
+                    this.employeerepository = new Repository<Employee>(_datacontext);
                 }
                 return employeerepository;
             }
@@ -28,7 +36,7 @@ namespace EFIOCDIAFAMMVC.Data.UnitOfWork
 
         public void Save()
         {
-            EFIOCDIAFAMMVCDbcontext.SaveChanges();
+            _datacontext.SaveChanges();
         }
 
         private bool disposed = false;
@@ -39,7 +47,7 @@ namespace EFIOCDIAFAMMVC.Data.UnitOfWork
             {
                 if (disposing)
                 {
-                    EFIOCDIAFAMMVCDbcontext.Dispose();
+                    _datacontext.Dispose();
                 }
             }
             this.disposed = true;

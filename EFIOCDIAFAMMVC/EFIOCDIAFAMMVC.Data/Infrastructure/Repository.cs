@@ -12,7 +12,7 @@ namespace EFIOCDIAFAMMVC.Data.Infrastructure
 {
     public class Repository<TEntity> :Disposable, IRepository<TEntity> where TEntity : class
     {
-        private DbContext _DbContext = new EFIOCDIAFAMMVCDbcontext();
+        private DbContext _DbContext;
         private DbSet<TEntity> DbSet { get { return _DbContext.Set<TEntity>(); } }
 
         public Repository(DbContext DbContext)
@@ -28,25 +28,19 @@ namespace EFIOCDIAFAMMVC.Data.Infrastructure
         public void Add(TEntity entity)
         {
             DbSet.Add(entity);
-            Commit();
+            
         }
 
         public void Update(TEntity entity)
         {
             DbSet.Attach(entity);
-            _DbContext.Entry(entity).State = EntityState.Modified;
-            Commit();
+            _DbContext.Entry(entity).State = EntityState.Modified;            
         }
 
         public void Delete(TEntity entity)
         {
-            DbSet.Remove(entity);
-            Commit();
+            DbSet.Remove(entity);            
         }
-
-        private void Commit()
-        {
-            _DbContext.SaveChanges();
-        }        
+           
     }
 }

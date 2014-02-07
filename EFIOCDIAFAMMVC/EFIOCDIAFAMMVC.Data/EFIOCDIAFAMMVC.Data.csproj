@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dbcontexts\EFIOCDIAFAMMVCDbcontext.cs" />
+    <Compile Include="Dbcontexts\EFIOCDIAFAMMVCSecondDbcontext.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
